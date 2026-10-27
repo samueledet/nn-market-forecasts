@@ -29,7 +29,13 @@ A short write-up: [Forecast the risk, not the return](https://samueledet.github.
    not significantly, and only thanks to 2020–2025. The same design, fixed in advance and replicated in the
    other 10 markets, lowered the maximum drawdown in all 10 but beat buy and hold's Sharpe ratio in only two
    (Brazil and India). In the other eight it was worse, often clearly. With 11 markets tested, two or three
-   wins are about what chance alone would produce.
+   wins are about what chance alone would produce. At the one-month horizon, no model beat "always up" on
+   direction in 10 of 11 markets.
+5. **Rich inputs improve volatility forecasts, but not through the network.** With the same rich inputs, an
+   average of a linear model, gradient-boosted trees and an LSTM cut next-week volatility forecast errors by a
+   median 19% and beat HAR in 10 of 11 markets. The LSTM alone got worse with more inputs (median 13%, beating
+   HAR in 5 of 11), below a plain linear model (17%). Volatility targeting with the combined forecast cut the
+   maximum drawdown in 9 of 11 markets and beat buy and hold's Sharpe ratio in 3, none significantly.
 
 ![Volatility forecast accuracy by market and model](analysis/figures/volatility_forecasts.png)
 
@@ -114,7 +120,30 @@ VIX, US yields, bonds, gold, the dollar) as of the last US close before its own 
 Volatility targeting alone (HAR) beat buy and hold's Sharpe ratio in one of the 10 markets. All strategies,
 with sub-period Sharpe ratios: [`improved_markets_summary.csv`](analysis/results/improved_markets_summary.csv).
 
-### 4. The original question, re-tested ([`analysis/us_direction_rerun.py`](analysis/us_direction_rerun.py))
+### 4. Volatility with rich inputs, 11 markets ([`analysis/volatility_rich.py`](analysis/volatility_rich.py))
+
+Same inputs and walk-forward design as studies 2 and 3, forecasting the log of next week's realised variance.
+Reduction in squared error against last month's volatility:
+
+| Market | HAR | GARCH | Linear, all inputs | Trees | LSTM | Average of linear, trees, LSTM |
+|---|---|---|---|---|---|---|
+| United States | 17% | 2% | 34% | 34% | 29% | 35% |
+| Japan | 16% | −1% | 17% | 17% | 15% | 19% |
+| United Kingdom | 16% | −3% | 26% | 21% | 22% | 26% |
+| Germany | 14% | −1% | 26% | 25% | 23% | 28% |
+| Australia | 14% | −3% | 21% | 14% | 11% | 19% |
+| Brazil | 10% | −13% | 6% | −1% | 1% | 6% |
+| Mexico | 11% | −6% | 15% | 6% | 9% | 13% |
+| India | 10% | −13% | 8% | 13% | 13% | 15% |
+| China | 11% | −12% | 10% | 13% | 5% | 13% |
+| South Africa | 14% | 1% | 23% | 17% | 16% | 23% |
+| Indonesia | 14% | −16% | 14% | 12% | 12% | 16% |
+| **Median** | **14%** | **−3%** | **17%** | **14%** | **13%** | **19%** |
+
+Volatility targeting with each forecast, including Sharpe ratios, drawdowns and bootstrap p-values:
+[`vol_rich_summary.csv`](analysis/results/vol_rich_summary.csv).
+
+### 5. The original question, re-tested ([`analysis/us_direction_rerun.py`](analysis/us_direction_rerun.py))
 
 The 2017 networks and settings, on clean data, predicting whether SPY rises tomorrow, with a time-ordered split:
 
@@ -146,6 +175,7 @@ python get_prices.py SPY ^VIX ^TNX ^IRX TLT LQD GLD DX-Y.NYB ^FTSE ^GDAXI ^N225 
     --start 2004-01-01 --end 2026-01-01 --out data_us
 python improve_us.py                # about 20 minutes
 python improve_markets.py           # about 1.5 hours on 4 CPU cores
+python volatility_rich.py           # about 40 minutes on 4 CPU cores
 python get_prices.py SPY ^FCHI ^FTSE ^GDAXI ^DJI ^IXIC ^HSI XOM GE MSFT PG JNJ \
     --start 2008-10-01 --end 2026-01-01
 python us_direction_rerun.py
