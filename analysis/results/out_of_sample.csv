@@ -1,0 +1,11 @@
+design,model,accuracy,accuracy sd,strategy annual return,strategy volatility,strategy Sharpe,strategy max drawdown,share of days invested
+"Essay period, time-ordered split",Always up,0.5313,0.0000,0.1647,0.1302,1.1710,-0.1282,1.0000
+"Essay period, time-ordered split",Logistic regression,0.5313,0.0000,,,,,
+"Essay period, time-ordered split",Simple RNN,0.5213,0.0191,0.0083,0.1049,0.0788,-0.1137,0.6391
+"Essay period, time-ordered split",LSTM,0.5398,0.0138,0.2021,0.1069,1.7222,-0.0913,0.5990
+"Essay period, time-ordered split",GRU,0.5258,0.0156,0.1644,0.1026,1.4841,-0.0812,0.5990
+"New data: train 2009-2019, test 2020-2025",Always up,0.5514,0.0000,0.1487,0.2080,0.6664,-0.3372,1.0000
+"New data: train 2009-2019, test 2020-2025",Logistic regression,0.5528,0.0000,,,,,
+"New data: train 2009-2019, test 2020-2025",Simple RNN,0.4995,0.0040,0.0401,0.1683,0.2338,-0.3055,0.6330
+"New data: train 2009-2019, test 2020-2025",LSTM,0.4936,0.0119,0.0613,0.1674,0.3551,-0.2426,0.5461
+"New data: train 2009-2019, test 2020-2025",GRU,0.4869,0.0157,0.0580,0.1661,0.3396,-0.2184,0.5760

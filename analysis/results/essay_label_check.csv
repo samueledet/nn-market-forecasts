@@ -1,0 +1,3 @@
+check,accuracy
+"Essay label and random split, clean data, logistic regression",0.7373
+Same label on pure random noise,0.6530

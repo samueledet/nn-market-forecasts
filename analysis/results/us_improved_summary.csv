@@ -1,0 +1,11 @@
+strategy,20-day accuracy,annual return,volatility,Sharpe,max drawdown,return at buy-and-hold volatility,P(Sharpe gain <= 0)
+Buy and hold,0.6969,0.1458,0.1696,0.8027,-0.3372,0.1458,
+Volatility target (HAR),,0.1259,0.1395,0.8500,-0.1803,0.1551,0.4090
+Timing: logit,0.6929,0.1474,0.1680,0.8185,-0.3372,0.1489,0.2820
+Volatility target x timing: logit,0.6929,0.1251,0.1389,0.8490,-0.1786,0.1549,0.4130
+Timing: gbt,0.5695,0.1250,0.1620,0.7271,-0.3341,0.1313,0.9675
+Volatility target x timing: gbt,0.5695,0.1052,0.1273,0.7860,-0.1786,0.1426,0.6105
+Timing: lstm,0.5714,0.1375,0.1586,0.8122,-0.3212,0.1477,0.4175
+Volatility target x timing: lstm,0.5714,0.1200,0.1254,0.9037,-0.1786,0.1656,0.2780
+Timing: ensemble,0.6228,0.1389,0.1642,0.7921,-0.3372,0.1438,0.6105
+Volatility target x timing: ensemble,0.6228,0.1203,0.1324,0.8578,-0.1786,0.1566,0.3910
