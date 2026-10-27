@@ -23,12 +23,13 @@ A short write-up: [Forecast the risk, not the return](https://samueledet.github.
 3. **Volatility targeting limits losses but does not add return.** Sizing positions to a 15% volatility target
    with the network's forecasts cut the maximum drawdown in 10 of 11 markets, typically by 6–16 percentage
    points. Its Sharpe ratio beat buy and hold only in India.
-4. **Richer inputs help risk-adjusted returns, but not significantly.** For the S&P 500, a model with
-   cross-asset features (VIX, yields, credit, gold, the dollar, foreign markets) and a one-month horizon,
-   combined with volatility targeting, raised the Sharpe ratio from 0.80 to 0.90 and halved the maximum
-   drawdown (−34% to −18%). At the same volatility as buy and hold it would have returned 16.6% a year
-   against 14.6%. But its raw return was lower (12.0%), the gain came entirely from 2020–2025, and a block
-   bootstrap gives a 28% probability that the Sharpe gain is zero or negative.
+4. **Richer inputs do not reliably beat buy and hold.** For the S&P 500, a model with cross-asset features
+   (VIX, yields, credit, gold, the dollar, foreign markets) and a one-month horizon, combined with volatility
+   targeting, raised the Sharpe ratio from 0.80 to 0.90 and halved the maximum drawdown (−34% to −18%), but
+   not significantly, and only thanks to 2020–2025. The same design, fixed in advance and replicated in the
+   other 10 markets, lowered the maximum drawdown in all 10 but beat buy and hold's Sharpe ratio in only two
+   (Brazil and India). In the other eight it was worse, often clearly. With 11 markets tested, two or three
+   wins are about what chance alone would produce.
 
 ![Volatility forecast accuracy by market and model](analysis/figures/volatility_forecasts.png)
 
@@ -91,7 +92,29 @@ The models' one-month accuracy (57–69%) was at or below that of "always up" (7
 volatility management, and from 2020–2025: in 2013–2019 every strategy had a lower Sharpe ratio than buy and
 hold. Full table, including sub-periods: [`us_improved_summary.csv`](analysis/results/us_improved_summary.csv).
 
-### 3. The original question, re-tested ([`analysis/us_direction_rerun.py`](analysis/us_direction_rerun.py))
+### 3. The same design in 10 more markets ([`analysis/improve_markets.py`](analysis/improve_markets.py))
+
+The S&P 500 design was replicated, unchanged, in the other 10 markets as an out-of-sample check. Each market
+uses its own momentum, trend, drawdown and volatility features, plus the global variables (S&P 500 returns,
+VIX, US yields, bonds, gold, the dollar) as of the last US close before its own trading day.
+
+| Market | Sharpe, buy and hold | Sharpe, vol. target × LSTM timing | P(Sharpe gain ≤ 0) | Max drawdown, buy and hold | Max drawdown, strategy | Return, buy and hold | Strategy return at buy-and-hold volatility |
+|---|---|---|---|---|---|---|---|
+| Japan | 0.57 | 0.31 | 0.99 | −32% | −25% | 13.1% | 6.8% |
+| United Kingdom | 0.26 | 0.09 | 0.95 | −37% | −30% | 3.9% | 1.4% |
+| Germany | 0.47 | 0.29 | 0.96 | −39% | −27% | 9.2% | 5.5% |
+| Australia | 0.32 | 0.16 | 0.92 | −37% | −23% | 4.8% | 2.4% |
+| Brazil | 0.32 | 0.52 | 0.04 | −47% | −20% | 7.7% | 12.9% |
+| Mexico | 0.19 | 0.11 | 0.79 | −36% | −29% | 2.9% | 1.7% |
+| India | 0.71 | 0.86 | 0.15 | −38% | −21% | 12.2% | 15.0% |
+| China | 0.22 | −0.10 | 0.99 | −52% | −43% | 4.5% | −2.0% |
+| South Africa | 0.48 | 0.25 | 0.99 | −38% | −26% | 9.0% | 4.6% |
+| Indonesia | 0.34 | 0.19 | 0.92 | −41% | −33% | 5.7% | 3.1% |
+
+Volatility targeting alone (HAR) beat buy and hold's Sharpe ratio in one of the 10 markets. All strategies,
+with sub-period Sharpe ratios: [`improved_markets_summary.csv`](analysis/results/improved_markets_summary.csv).
+
+### 4. The original question, re-tested ([`analysis/us_direction_rerun.py`](analysis/us_direction_rerun.py))
 
 The 2017 networks and settings, on clean data, predicting whether SPY rises tomorrow, with a time-ordered split:
 
@@ -122,6 +145,7 @@ python forecast_markets.py          # about 1 hour on 4 CPU cores
 python get_prices.py SPY ^VIX ^TNX ^IRX TLT LQD GLD DX-Y.NYB ^FTSE ^GDAXI ^N225 ^HSI \
     --start 2004-01-01 --end 2026-01-01 --out data_us
 python improve_us.py                # about 20 minutes
+python improve_markets.py           # about 1.5 hours on 4 CPU cores
 python get_prices.py SPY ^FCHI ^FTSE ^GDAXI ^DJI ^IXIC ^HSI XOM GE MSFT PG JNJ \
     --start 2008-10-01 --end 2026-01-01
 python us_direction_rerun.py

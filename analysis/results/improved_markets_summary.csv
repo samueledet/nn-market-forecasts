@@ -1,0 +1,101 @@
+market,group,strategy,20-day accuracy,annual return,volatility,Sharpe,max drawdown,return at buy-and-hold volatility,P(Sharpe gain <= 0),Sharpe 2013-2019,Sharpe 2020-2025
+Japan,Developed,Buy and hold,0.6050,0.1308,0.2145,0.5733,-0.3180,0.1308,,0.5479,0.6017
+Japan,Developed,Volatility target (HAR),,0.0658,0.1448,0.4403,-0.2426,0.0990,0.9615,0.3444,0.5516
+Japan,Developed,Timing: logit,0.5717,0.1264,0.1947,0.6115,-0.3127,0.1401,0.2725,0.5693,0.6584
+Japan,Developed,Volatility target x timing: logit,0.5717,0.0628,0.1325,0.4597,-0.2554,0.1036,0.8615,0.3302,0.6145
+Japan,Developed,Timing: gbt,0.4954,0.1045,0.1827,0.5441,-0.3127,0.1238,0.6295,0.5878,0.5013
+Japan,Developed,Volatility target x timing: gbt,0.4954,0.0456,0.1211,0.3686,-0.2289,0.0823,0.9800,0.3010,0.4449
+Japan,Developed,Timing: lstm,0.4945,0.0897,0.1869,0.4597,-0.3127,0.1036,0.9220,0.4804,0.4389
+Japan,Developed,Volatility target x timing: lstm,0.4945,0.0389,0.1249,0.3054,-0.2475,0.0677,0.9915,0.2852,0.3289
+Japan,Developed,Timing: ensemble,0.5065,0.1030,0.1881,0.5213,-0.3127,0.1183,0.7520,0.4998,0.5453
+Japan,Developed,Volatility target x timing: ensemble,0.5065,0.0494,0.1260,0.3828,-0.2331,0.0856,0.9635,0.2937,0.4895
+United Kingdom,Developed,Buy and hold,0.5576,0.0391,0.1494,0.2566,-0.3661,0.0391,,0.2499,0.2661
+United Kingdom,Developed,Volatility target (HAR),,0.0095,0.1400,0.0675,-0.3640,0.0101,0.9685,-0.0327,0.1788
+United Kingdom,Developed,Timing: logit,0.5484,0.0395,0.1412,0.2741,-0.3553,0.0418,0.3585,0.3221,0.2373
+United Kingdom,Developed,Volatility target x timing: logit,0.5484,0.0132,0.1270,0.1033,-0.3172,0.0155,0.9415,0.0667,0.1427
+United Kingdom,Developed,Timing: gbt,0.5444,0.0309,0.1382,0.2205,-0.3568,0.0335,0.7185,0.3096,0.1521
+United Kingdom,Developed,Volatility target x timing: gbt,0.5444,0.0022,0.1217,0.0184,-0.3165,0.0028,0.9910,0.0245,0.0126
+United Kingdom,Developed,Timing: lstm,0.5334,0.0389,0.1362,0.2805,-0.3451,0.0428,0.3445,0.3215,0.2472
+United Kingdom,Developed,Volatility target x timing: lstm,0.5334,0.0114,0.1217,0.0931,-0.3046,0.0140,0.9455,0.0654,0.1237
+United Kingdom,Developed,Timing: ensemble,0.5417,0.0337,0.1405,0.2359,-0.3548,0.0359,0.6490,0.2900,0.1931
+United Kingdom,Developed,Volatility target x timing: ensemble,0.5417,0.0043,0.1249,0.0347,-0.3343,0.0052,0.9880,-0.0028,0.0742
+Germany,Developed,Buy and hold,0.5935,0.0917,0.1863,0.4711,-0.3878,0.0917,,0.4542,0.4910
+Germany,Developed,Volatility target (HAR),,0.0544,0.1443,0.3672,-0.2704,0.0708,0.8640,0.3638,0.3710
+Germany,Developed,Timing: logit,0.5666,0.0826,0.1815,0.4372,-0.3878,0.0849,0.7925,0.4251,0.4516
+Germany,Developed,Volatility target x timing: logit,0.5666,0.0513,0.1419,0.3528,-0.2588,0.0679,0.8890,0.3509,0.3548
+Germany,Developed,Timing: gbt,0.5308,0.0782,0.1745,0.4316,-0.3878,0.0837,0.7500,0.3390,0.5231
+Germany,Developed,Volatility target x timing: gbt,0.5308,0.0439,0.1340,0.3204,-0.2569,0.0615,0.9230,0.2331,0.4138
+Germany,Developed,Timing: lstm,0.5220,0.0729,0.1718,0.4094,-0.3894,0.0792,0.8320,0.4112,0.4104
+Germany,Developed,Volatility target x timing: lstm,0.5220,0.0387,0.1320,0.2877,-0.2711,0.0551,0.9635,0.3320,0.2376
+Germany,Developed,Timing: ensemble,0.5342,0.0701,0.1789,0.3790,-0.3878,0.0732,0.9800,0.3750,0.3857
+Germany,Developed,Volatility target x timing: ensemble,0.5342,0.0365,0.1376,0.2602,-0.2588,0.0497,0.9835,0.2725,0.2463
+Australia,Developed,Buy and hold,0.5819,0.0484,0.1467,0.3222,-0.3653,0.0484,,0.3996,0.2611
+Australia,Developed,Volatility target (HAR),,0.0303,0.1408,0.2122,-0.2283,0.0316,0.8715,0.2165,0.2076
+Australia,Developed,Timing: logit,0.5565,0.0382,0.1400,0.2675,-0.3491,0.0400,0.8630,0.2923,0.2524
+Australia,Developed,Volatility target x timing: logit,0.5565,0.0190,0.1333,0.1410,-0.2233,0.0209,0.9580,0.0873,0.2006
+Australia,Developed,Timing: gbt,0.5191,0.0387,0.1337,0.2844,-0.3644,0.0426,0.7285,0.2876,0.2914
+Australia,Developed,Volatility target x timing: gbt,0.5191,0.0220,0.1224,0.1781,-0.2266,0.0265,0.9270,0.0963,0.2623
+Australia,Developed,Timing: lstm,0.5543,0.0376,0.1375,0.2685,-0.3519,0.0402,0.8485,0.3795,0.1767
+Australia,Developed,Volatility target x timing: lstm,0.5543,0.0215,0.1293,0.1646,-0.2254,0.0244,0.9215,0.2125,0.1108
+Australia,Developed,Timing: ensemble,0.5663,0.0378,0.1405,0.2643,-0.3644,0.0395,0.9070,0.3050,0.2367
+Australia,Developed,Volatility target x timing: ensemble,0.5663,0.0199,0.1317,0.1493,-0.2266,0.0221,0.9650,0.1189,0.1824
+Brazil,Emerging,Buy and hold,0.5485,0.0768,0.2339,0.3162,-0.4682,0.0768,,0.4173,0.2105
+Brazil,Emerging,Volatility target (HAR),,0.0492,0.1414,0.3394,-0.3161,0.0826,0.4525,0.3870,0.2835
+Brazil,Emerging,Timing: logit,0.5441,0.0888,0.1972,0.4314,-0.4487,0.1062,0.0835,0.6448,0.2340
+Brazil,Emerging,Volatility target x timing: logit,0.5441,0.0572,0.1121,0.4963,-0.2072,0.1231,0.0485,0.6342,0.3412
+Brazil,Emerging,Timing: gbt,0.5844,0.0629,0.2055,0.2969,-0.4682,0.0719,0.5715,0.4130,0.1899
+Brazil,Emerging,Volatility target x timing: gbt,0.5844,0.0403,0.1152,0.3427,-0.2740,0.0835,0.4280,0.4023,0.2759
+Brazil,Emerging,Timing: lstm,0.5632,0.0839,0.1986,0.4055,-0.4553,0.0995,0.1020,0.6156,0.2121
+Brazil,Emerging,Volatility target x timing: lstm,0.5632,0.0596,0.1118,0.5181,-0.1973,0.1289,0.0355,0.6465,0.3758
+Brazil,Emerging,Timing: ensemble,0.5881,0.0925,0.2033,0.4350,-0.4682,0.1071,0.0480,0.5672,0.3131
+Brazil,Emerging,Volatility target x timing: ensemble,0.5881,0.0633,0.1134,0.5414,-0.2249,0.1350,0.0160,0.5772,0.5013
+Mexico,Emerging,Buy and hold,0.5492,0.0292,0.1547,0.1859,-0.3626,0.0292,,0.0031,0.3592
+Mexico,Emerging,Volatility target (HAR),,0.0050,0.1438,0.0345,-0.3296,0.0054,0.9735,-0.1120,0.1930
+Mexico,Emerging,Timing: logit,0.5378,0.0161,0.1313,0.1215,-0.3552,0.0190,0.7815,-0.1170,0.3523
+Mexico,Emerging,Volatility target x timing: logit,0.5378,-0.0015,0.1165,-0.0127,-0.3272,-0.0020,0.9850,-0.2362,0.2407
+Mexico,Emerging,Timing: gbt,0.5177,0.0234,0.1395,0.1658,-0.3403,0.0260,0.6190,0.1057,0.2225
+Mexico,Emerging,Volatility target x timing: gbt,0.5177,0.0036,0.1272,0.0279,-0.2865,0.0043,0.9530,-0.0037,0.0607
+Mexico,Emerging,Timing: lstm,0.5405,0.0311,0.1295,0.2368,-0.3373,0.0373,0.2860,0.0951,0.3766
+Mexico,Emerging,Volatility target x timing: lstm,0.5405,0.0128,0.1159,0.1101,-0.2878,0.0172,0.7920,-0.0011,0.2384
+Mexico,Emerging,Timing: ensemble,0.5334,0.0226,0.1352,0.1653,-0.3386,0.0259,0.6170,0.0882,0.2423
+Mexico,Emerging,Volatility target x timing: ensemble,0.5334,0.0052,0.1209,0.0431,-0.2792,0.0067,0.9365,-0.0079,0.1030
+India,Emerging,Buy and hold,0.6191,0.1225,0.1627,0.7103,-0.3807,0.1225,,0.7826,0.6590
+India,Emerging,Volatility target (HAR),,0.0995,0.1398,0.6785,-0.2657,0.1167,0.6465,0.6337,0.7281
+India,Emerging,Timing: logit,0.5980,0.1124,0.1521,0.7002,-0.3807,0.1206,0.5520,0.8068,0.6333
+India,Emerging,Volatility target x timing: logit,0.5980,0.0961,0.1308,0.7013,-0.2286,0.1208,0.5820,0.6713,0.7343
+India,Emerging,Timing: gbt,0.5841,0.1086,0.1490,0.6919,-0.3815,0.1191,0.6030,0.7050,0.7057
+India,Emerging,Volatility target x timing: gbt,0.5841,0.0874,0.1235,0.6784,-0.2323,0.1167,0.6425,0.5702,0.7910
+India,Emerging,Timing: lstm,0.5510,0.1234,0.1415,0.8219,-0.3749,0.1431,0.0785,0.9190,0.7618
+India,Emerging,Volatility target x timing: lstm,0.5510,0.1072,0.1182,0.8619,-0.2130,0.1505,0.1510,0.8071,0.9229
+India,Emerging,Timing: ensemble,0.5936,0.1179,0.1494,0.7462,-0.3796,0.1291,0.2960,0.7183,0.7949
+India,Emerging,Volatility target x timing: ensemble,0.5936,0.0976,0.1259,0.7399,-0.2269,0.1279,0.4605,0.5770,0.9050
+China,Emerging,Buy and hold,0.5361,0.0454,0.2004,0.2216,-0.5230,0.0454,,0.2001,0.2615
+China,Emerging,Volatility target (HAR),,0.0305,0.1437,0.2088,-0.3717,0.0427,0.5605,0.4099,-0.0185
+China,Emerging,Timing: logit,0.4754,0.0161,0.1531,0.1045,-0.4067,0.0212,0.8810,0.1370,0.0546
+China,Emerging,Volatility target x timing: logit,0.4754,0.0062,0.1186,0.0523,-0.3460,0.0105,0.8505,0.2627,-0.1926
+China,Emerging,Timing: gbt,0.4898,-0.0040,0.1594,-0.0249,-0.4700,-0.0050,0.9965,-0.0819,0.0690
+China,Emerging,Volatility target x timing: gbt,0.4898,-0.0008,0.1127,-0.0070,-0.3477,-0.0014,0.9490,0.2030,-0.2319
+China,Emerging,Timing: lstm,0.4448,-0.0130,0.1589,-0.0826,-0.5113,-0.0164,0.9995,-0.1507,0.0386
+China,Emerging,Volatility target x timing: lstm,0.4448,-0.0114,0.1118,-0.1030,-0.4258,-0.0204,0.9855,0.0595,-0.3006
+China,Emerging,Timing: ensemble,0.4499,-0.0116,0.1562,-0.0747,-0.5146,-0.0149,1.0000,-0.1304,0.0212
+China,Emerging,Volatility target x timing: ensemble,0.4499,-0.0080,0.1121,-0.0713,-0.3987,-0.0142,0.9780,0.1044,-0.2742
+South Africa,Emerging,Buy and hold,0.5780,0.0904,0.1810,0.4779,-0.3782,0.0904,,0.3321,0.6190
+South Africa,Emerging,Volatility target (HAR),,0.0481,0.1466,0.3203,-0.2767,0.0597,0.9640,0.0926,0.5735
+South Africa,Emerging,Timing: logit,0.5304,0.0905,0.1708,0.5073,-0.3539,0.0962,0.3230,0.3814,0.6288
+South Africa,Emerging,Volatility target x timing: logit,0.5304,0.0498,0.1354,0.3591,-0.2194,0.0671,0.9100,0.1492,0.5863
+South Africa,Emerging,Timing: gbt,0.5223,0.0706,0.1614,0.4227,-0.3951,0.0795,0.7940,0.2895,0.5505
+South Africa,Emerging,Volatility target x timing: gbt,0.5223,0.0351,0.1278,0.2703,-0.3105,0.0501,0.9830,0.0258,0.5349
+South Africa,Emerging,Timing: lstm,0.4587,0.0693,0.1625,0.4122,-0.3618,0.0775,0.8515,0.3218,0.5022
+South Africa,Emerging,Volatility target x timing: lstm,0.4587,0.0320,0.1261,0.2499,-0.2638,0.0463,0.9910,0.0767,0.4487
+South Africa,Emerging,Timing: ensemble,0.5101,0.0798,0.1675,0.4582,-0.3649,0.0865,0.6455,0.2682,0.6381
+South Africa,Emerging,Volatility target x timing: ensemble,0.5101,0.0379,0.1306,0.2850,-0.2803,0.0529,0.9800,0.0092,0.5911
+Indonesia,Emerging,Buy and hold,0.6012,0.0566,0.1598,0.3449,-0.4114,0.0566,,0.3620,0.3281
+Indonesia,Emerging,Volatility target (HAR),,0.0328,0.1356,0.2384,-0.3418,0.0388,0.8900,0.3055,0.1643
+Indonesia,Emerging,Timing: logit,0.5696,0.0416,0.1478,0.2758,-0.3783,0.0450,0.9360,0.3396,0.2030
+Indonesia,Emerging,Volatility target x timing: logit,0.5696,0.0234,0.1294,0.1791,-0.3275,0.0290,0.9565,0.2761,0.0650
+Indonesia,Emerging,Timing: gbt,0.5385,0.0492,0.1433,0.3352,-0.4373,0.0550,0.5405,0.1815,0.4966
+Indonesia,Emerging,Volatility target x timing: gbt,0.5385,0.0320,0.1209,0.2602,-0.3527,0.0425,0.7895,0.1472,0.3917
+Indonesia,Emerging,Timing: lstm,0.5264,0.0424,0.1386,0.2994,-0.4035,0.0490,0.7315,0.2812,0.3194
+Indonesia,Emerging,Volatility target x timing: lstm,0.5264,0.0232,0.1181,0.1938,-0.3315,0.0314,0.9155,0.2116,0.1722
+Indonesia,Emerging,Timing: ensemble,0.5398,0.0357,0.1492,0.2354,-0.4114,0.0383,0.9645,0.1675,0.3104
+Indonesia,Emerging,Volatility target x timing: ensemble,0.5398,0.0180,0.1250,0.1431,-0.3418,0.0231,0.9780,0.1363,0.1514

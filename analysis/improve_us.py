@@ -45,6 +45,7 @@ TEST_YEARS = range(2013, 2026)
 H = 20
 WINDOW = 60
 SEEDS = [0, 1, 2]
+THREADS = 4
 COST = 0.0005
 TARGET_VOL = 0.15
 MAX_LEVERAGE = 1.5
@@ -102,7 +103,7 @@ FEATURES = None
 
 def lstm_probs(Xtr_seq, ytr, Xte_seq, seed):
     import torch
-    torch.set_num_threads(4)
+    torch.set_num_threads(THREADS)
     torch.manual_seed(seed)
 
     class Net(torch.nn.Module):
